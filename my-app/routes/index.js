@@ -8,7 +8,6 @@ var client = github.client();
 
 router.get('/',function(req,res) {
   client.get('/users', 1, 21, true, function (err, status, body, headers) {    
-    console.log(body);
     res.render('index.jade', {users: body});
     });
 });

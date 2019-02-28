@@ -1,0 +1,15 @@
+extends ./navbar.jade
+block contenido 
+  body
+    section#team.pb-5
+      .container
+        h5.section-title.h1 User Repos
+        .row
+         for Project in projects
+          .col-xs-12.col-sm-6.col-md-3
+            .image-flip(ontouchstart="this.classList.toggle('hover');")
+              .mainflip
+                .frontside
+                  .card
+                    .card-body.text-center
+                      h4.card-title #{Project.name}

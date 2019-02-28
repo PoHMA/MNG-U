@@ -1,4 +1,22 @@
 extends ./navbar.jade
 block contenido 
   body
-    h1.align-middle User GitHub
+    section#team.pb-5
+      .container
+        h5.section-title.h1 User Github
+        .row
+         for User in users   
+          .col-xs-12.col-sm-6.col-md-3
+            .image-flip(ontouchstart="this.classList.toggle('hover');")
+              .mainflip
+                .frontside
+                  .card
+                    .card-body.text-center
+                      p
+                        img.img-fluid(src='#{User.avatar_url}', alt='card image')
+                      h4.card-title #{User.login}
+                      p.card-text 
+                        a(href='/user?user=' + '#{User.login}') Ver página sobre repositorios  
+                      a.social-icon.text-xs-center(target='_blank', href='#{User.html_url}' style="font-size:48px; ")
+                        i.fa.fa-github
+        a.next(href='/') Next »

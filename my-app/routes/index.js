@@ -1,10 +1,15 @@
 var express = require('express');
+var github = require('octonode');
 var router = express.Router();
 var router = express();
-
+var client = github.client();
+var paginacion = 0;
 
 router.get('/',function(req,res) {
-  res.render('index.jade');
+  client.get('/users', paginacion,20, function (err, status, body, headers) {    
+    res.render('index.jade', {users: body});
+    });
+  paginacion = paginacion + 20;
 });
 
 

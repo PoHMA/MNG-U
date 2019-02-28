@@ -15,4 +15,5 @@ block contenido
                       p
                         img.img-fluid(src='#{User.avatar_url}', alt='card image')
                       h4.card-title #{User.login}
-                      
+                      a.social-icon.text-xs-center(target='_blank', href='#{User.html_url}' style="font-size:48px; ")
+                        i.fa.fa-github

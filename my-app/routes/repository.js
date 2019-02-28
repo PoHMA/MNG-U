@@ -17,7 +17,7 @@ router.get('/user',function(req,res) {
         name_user = valores[1];
         ghuser = client.user(name_user);;
     }
-    ghuser.repos(2, 10, function (err,body,status) {
+    ghuser.repos(1, 10, function (err,body,status) {
         res.render('list-repositories.jade',{projects:body});
     });
 });

@@ -13,6 +13,7 @@ router.get('/user',function(req,res) {
         ghuser = client.user(getNameUser(req));;
     }
     ghuser.repos(1, 10, function (err,body,status) {
+        console.log(body);
         res.render('list-repositories.jade',{projects:body});
     });
 });

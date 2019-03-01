@@ -1,6 +1,7 @@
-/* FontAwesome for working BootSnippet :> */
 
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+
 #team {
     background: #eee !important;
 }
@@ -34,6 +35,15 @@ section .section-title {
     border: none;
     background: #ffffff;
 }
+
+.image-flip:hover .frontsidee,
+.image-flip.hover .frontsidee {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+
 
 .image-flip:hover .backside,
 .image-flip.hover .backside {
@@ -119,4 +129,8 @@ section .section-title {
     width: 120px;
     height: 120px;
     border-radius: 50%;
+}
+
+.icon-git a{
+    font-size: 48px;
 }

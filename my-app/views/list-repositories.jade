@@ -3,13 +3,44 @@ block contenido
   body
     section#team.pb-5
       .container
-        h5.section-title.h1 User Repos
+        h5.section-title.h1 #{User.login}
         .row
          for Project in projects
           .col-xs-12.col-sm-6.col-md-3
             .image-flip(ontouchstart="this.classList.toggle('hover');")
               .mainflip
-                .frontside
+                .frontside.frontsidee
                   .card
                     .card-body.text-center
+                      p
+                        img.img-fluid(src='/img/git.png', alt='card image' )
                       h4.card-title #{Project.name}
+                      p.card-text #{Project.description}  
+                      a.btn.btn-primary.btn-sm(href='#')
+                        i.fa.fa-plus
+                .backside
+                  .card
+                    .card-body.text-center.mt-4
+                      h4.card-title 
+                      p.card-text
+                        | Numero Issues Abierto : #{Project.open_issues_count} 
+                      p.card-text
+                        | Numero Forks  : #{Project.forks_count} 
+                      ul.list-inline
+                        li.list-inline-item
+                          a.social-icon.text-xs-center(target='_blank', href='#{Project.html_url}' style="font-size:48px; " )
+                            i.fa.fa-github
+        .card-body
+          .text-center
+            div.pager.pager-round.pagination-repo
+              div.pull-left.page-item
+                a.next(href='/prev?user=' + '#{User.login}')
+                  i.fa.fa-angle-double-left
+                  |  Previous
+              div.pull-right.page-item
+                a.next(href='/next?user=' + '#{User.login}')
+                  | Next 
+                  i.fa.fa-angle-double-right
+              div.center
+                a.active
+                  |  #{page} 

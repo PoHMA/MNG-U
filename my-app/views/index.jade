@@ -3,7 +3,7 @@ block contenido
   body
     section#team.pb-5
       .container
-        h5.section-title.h1 User Github
+        h5.section-title.h1 Users Github
         .row
          for User in users   
           .col-xs-12.col-sm-6.col-md-3
@@ -19,4 +19,14 @@ block contenido
                         a(href='/user?user=' + '#{User.login}') Ver página sobre repositorios  
                       a.social-icon.text-xs-center(target='_blank', href='#{User.html_url}' style="font-size:48px; ")
                         i.fa.fa-github
-        a.next(href='/') Next »
+        .card-body
+          .text-center
+            div.pager.pager-round.pagination-repo
+              div.pull-left.page-item
+                a.next(href='/')
+                  i.fa.fa-angle-double-left
+                  |  Previous
+              div.pull-right.page-item
+                a.next(href='/')
+                  | Next 
+                  i.fa.fa-angle-double-right
